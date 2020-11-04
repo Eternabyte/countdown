@@ -1,0 +1,154 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+
+
+@font-face {
+  font-family: Terminus;
+  src: url("https://baabaablackgoat.com/projects/solstice/res/Terminus.ttf");
+}
+
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+  	border-color: #8932ac;
+}
+
+
+table { background-color: rgba(0,0,0,.5); !important;
+      }
+    
+
+html,body{
+
+
+  cursor: url(img/cursor1.png), pointer;
+  height: 10%;
+
+  font-family: "Terminus";
+  
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: fit;
+  color: #eee;
+  text-align: center;
+  height: 100%;
+  background-color: rgba(0,0,0,0)
+}
+@keyframes scroll{
+  100%{
+background-position:-640px 0px;
+  }
+}
+p {
+  margin: 3px;
+}
+a,visited{
+  text-decoration: none;
+  color: #61b;
+}
+#button{
+  color: #61b;
+  margin-bottom: 7px;
+  cursor: pointer;
+  display: inline-block;
+  width: auto;
+}
+#height-maintain{
+  height: 125px;
+}
+#wrapper{
+  display: inline-flex;
+}
+#wrapper div{
+  position: relative;
+}
+#wrapper div img{
+  position: absolute;
+  left: 50%;
+  transform:translateX(-50%);
+}
+.timepiece {
+  width: 71px;
+}
+.dots{
+  width: 10px;
+  padding:0 4px;
+}
+#door{
+	padding-top: 350px;
+    margin: 0 0 -35px 0;
+	position: center;
+
+}
+#explanation {
+  display: none;
+}
+input {
+  background-color: rgba(55,55,55,.6);
+  color: white;
+  font-family: "Terminus";
+  border: 0;
+}
+button {
+  color: white;
+  font-family: "Terminus";
+  border: 1px solid white;
+  background-color: rgba(55,55,55,.6);
+
+}
+
+/* ---- stats.js ---- */
+
+.count-particles{
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13E8E9;
+  font-size: .8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles{
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles{
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+devlog {
+  font-family: "Terminus"; 
+  color: white;
+}
+
+red {
+  color: red;
+}
+blue {
+  color: blue;
+}
+
+purple {
+  color: purple
