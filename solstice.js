@@ -87,6 +87,7 @@ function ticktock(){
   }
 }
 
+
 function run(){
   calculateTime();
   displayTime();
