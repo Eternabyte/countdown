@@ -2,7 +2,7 @@ var currentDate;
 var targetDate;
 var timeLeft, daysLeft, hoursLeft, minsLeft, secsLeft;
 var dots = 1;
-var timeZoneOffset = 480 // Returns Timezone offset in Minutes. ("How many minutes do you have to add or remove to reach UTC?")
+var timeZoneOffset = -480 // Returns Timezone offset in Minutes. ("How many minutes do you have to add or remove to reach UTC?")
 
 //var timeZoneOffset = new Date().getTimezoneOffset(); // Returns Timezone offset in Minutes. ("How many minutes do you have to add or remove to reach UTC?")
 
@@ -95,7 +95,7 @@ function run(){
 
 $(document).ready(function(){
   $("#targetdate").datepicker({dateFormat: "YYYY MM DD"});
-  targetDate = new Date("2020 December 21 24:00:00");
+  targetDate = new Date("2020 December 21 08:00:00");
   targetDate.setMinutes(targetDate.getMinutes() - timeZoneOffset); // Compensates for any time zone.
   console.log (targetDate);
   $("#button").click(function() {
