@@ -94,6 +94,9 @@ function run(){
   dots = dots*-1;
 }
 
+
+
+
 $(document).ready(function(){
   $("#targetdate").datepicker({dateFormat: "YYYY MM DD"});
   targetDate = new Date("2020 December 21 24:00:00");
