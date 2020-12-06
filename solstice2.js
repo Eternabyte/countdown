@@ -9,6 +9,7 @@ window.onload = function(e){
         interval = 1000;
 
 
+
     // if time to countdown
     if(diffTime > 0) {
 
