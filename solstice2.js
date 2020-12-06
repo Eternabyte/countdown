@@ -2,7 +2,7 @@
 window.onload = function(e){
 
     var $clock = $('#clock'),
-        eventTime = moment.tz('21-12-2020 15:30:00', 'DD-MM-YYYY HH:mm:ss', "Australia/Sydney").unix(),
+        eventTime = moment.tz('21-12-2020 15:30:00', 'DD-MM-YYYY HH:mm:ss', "Canada/Vancouver").unix(),
         currentTime = moment().unix(),
         diffTime = eventTime //- currentTime,
         duration = moment.duration(diffTime * 1000, 'milliseconds'),
@@ -39,10 +39,7 @@ window.onload = function(e){
             s = $.trim(s).length === 1 ? '0' + s : s;
 
             // show how many hours, minutes and seconds are left
-            $d.text(d);
-            $h.text(h);
-            $m.text(m);
-            $s.text(s);
+			$d.text(d); $h.text(h); $m.text(m); $s.text(s);
  
         }, interval);
 
