@@ -37,7 +37,7 @@ window.onload = function(e){
             $h.text(h);
             $m.text(m);
             $s.text(s);
-
+ 
         }, interval);
 
     }
