@@ -11,6 +11,7 @@ window.onload = function(e){
 
 
 
+
     // if time to countdown
     if(diffTime > 0) {
 	
