@@ -2,7 +2,7 @@
 window.onload = function(e){
 
     var $clock = $('#clock'),
-        eventTime = moment('21-12-2020 15:30:00', 'DD-MM-YYYY HH:mm:ss').unix(),
+        eventTime = moment.tz('21-12-2020 15:30:00', 'DD-MM-YYYY HH:mm:ss', "Australia/Sydney").unix(),
         currentTime = moment().unix(),
         diffTime = eventTime //- currentTime,
         duration = moment.duration(diffTime * 1000, 'milliseconds'),
