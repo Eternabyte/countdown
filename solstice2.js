@@ -8,6 +8,7 @@ window.onload = function(e){
         duration = moment.duration(diffTime * 1000, 'milliseconds'),
         interval = 1000;
 
+
     // if time to countdown
     if(diffTime > 0) {
 
