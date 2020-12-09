@@ -3,9 +3,9 @@ window.onload = function(e){
 	var timeLeft, daysLeft, hoursLeft, minsLeft, secsLeft;
 	var dots = 1;
     var $clock = $('#clock'),
-        eventTime = moment.tz('16-12-2020 12:30:00', 'DD-MM-YYYY HH:mm:ss', "America/Vancouver").unix(),
+        eventTime = moment.tz('21-12-2020 12:30:00', 'DD-MM-YYYY HH:mm:ss', "America/Vancouver").unix(),
         currentTime = moment().unix(),
-        diffTime = eventTime //- currentTime,
+        diffTime = eventTime - currentTime,
         duration = moment.duration(diffTime * 1000, 'milliseconds'),
         interval = 1000;
 
