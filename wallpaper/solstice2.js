@@ -1,30 +1,68 @@
-var currentDate;
-var targetDate;
-var timeLeft, daysLeft, hoursLeft, minsLeft, secsLeft;
-var dots = 1;
 
-//var timeZoneOffset = 0 // Returns Timezone offset in Minutes. ("How many minutes do you have to add or remove to reach UTC?")
+window.onload = function(e){
+	var timeLeft, daysLeft, hoursLeft, minsLeft, secsLeft;
+	var dots = 1;
+    var $clock = $('#clock'),
+        eventTime = moment.tz('21-12-2020 12:30:00', 'DD-MM-YYYY HH:mm:ss', "America/Vancouver").unix(),
+        currentTime = moment().unix(),
+        diffTime = eventTime - currentTime,
+        duration = moment.duration(diffTime * 1000, 'milliseconds'),
+        interval = 1000;
 
-//var timeZoneOffset = new Date().getTimezoneOffset(); // Returns Timezone offset in Minutes. ("How many minutes do you have to add or remove to reach UTC?")
 
 
-var timeZoneOffset = new Date().getTimezoneOffset(); // Returns Timezone offset in Minutes. ("How many minutes do you have to add or remove to reach UTC?")
 
+    // if time to countdown
+    if(diffTime > 0) {
+	
+        // Show clock
+        // $clock.show();
 
-function calculateTime(){
-  currentDate = new Date();
-  timeLeft = (targetDate.getTime() - currentDate.getTime()) / 1000;
-  daysLeft = Math.floor(timeLeft / 86400);
-  hoursLeft = Math.floor((timeLeft % 86400)/3600);
-  minsLeft = Math.floor((timeLeft % 3600)/60);
-  secsLeft = Math.floor(timeLeft % 60);
-}
+        var $d = $('<div class="days" ></div>').appendTo($clock),
+            $h = $('<div class="hours" ></div>').appendTo($clock),
+            $m = $('<div class="minutes" ></div>').appendTo($clock),
+            $s = $('<div class="seconds" ></div>').appendTo($clock);
+			
+			//TZ
+		//var $clock = moment().tz("Canada/Vancouver").format();
+			
+			
+        setInterval(function(){
+			
+            duration = moment.duration(duration.asMilliseconds() - interval, 'milliseconds');
+            var d = moment.duration(duration).days(),
+                h = moment.duration(duration).hours(),
+                m = moment.duration(duration).minutes(),
+                s = moment.duration(duration).seconds()
+				
+				daysLeft = moment.duration(duration).days(),
+                hoursLeft = moment.duration(duration).hours(),
+                minsLeft = moment.duration(duration).minutes(),
+                secsLeft = moment.duration(duration).seconds();
+				
+				d = $.trim(d).length === 1 ? '0' + d : d;
+				h = $.trim(h).length === 1 ? '0' + h : h;
+				m = $.trim(m).length === 1 ? '0' + m : m;
+				s = $.trim(s).length === 1 ? '0' + s : s;
 
+			
+				// show how many hours, minutes and seconds are left
+				//$d.text(d); $h.text(h); $m.text(m); $s.text(s);
+				//Display time
+				displayTime();
+				dots = dots*-1;
+		}, interval);
+
+	}
+	
+	
+	
+	
 function displayTime(){
   $(".dots").children().attr("src","./NEWCLOCK/dots_on.png");
   var temp;
   //Days
-  if (timeLeft <= 0) {
+  if (diffTime <= 0) {
     $(".timepiece").children().attr("src","./NEWCLOCK/0.png");
   } else {
     if (daysLeft < 100) {
@@ -101,19 +139,4 @@ function run(){
 
 
 
-$(document).ready(function(){
-  $("#targetdate").datepicker({dateFormat: "YYYY MM DD"});
-
-  targetDate = new Date("2020 December 21 24:00:00");
-  //targetDate.setMinutes(targetDate.getMinutes() - timeZoneOffset); // Compensates for any time zone.
-
-  targetDate = new Date("2020 December 21");
-  targetDate.setMinutes(targetDate.getMinutes() - timeZoneOffset); // Compensates for any time zone.
-  console.log (targetDate);
-  $("#button").click(function() {
-    $("#explanation").toggle();
-  });
-  setInterval(run, 1000);
-});
-//pain
-//dummy
+};
